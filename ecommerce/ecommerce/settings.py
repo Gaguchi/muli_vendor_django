@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop',  # Add the shop app to the list of installed apps
 ]
+
+AUTH_USER_MODEL = 'shop.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
