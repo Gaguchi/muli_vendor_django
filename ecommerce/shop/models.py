@@ -59,6 +59,13 @@ class Product(models.Model):
     def to_json(self):
         return serialize('json', [self])
 
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='products/')
+
+    def to_json(self):
+        return serialize('json', [self])
+
 class Order(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
